@@ -64,11 +64,28 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  // return an array
+  // 1st element is  the sum of those numbers
+  // 2nd element is the product of those numbers
+  // 3rd element "4 and 7 and 5 sum to 16."
+  // 4th element  "The product of 4 and 7 and 5 is 140."
+  var sumOne = sum(a, b)[0];
+  var sumTwo = sum(sumOne, c)[0];
 
+  var productOne = multiply(a, b)[0];
+  var productTwo = multiply(productOne, c)[0];
+
+
+  // template literal
+  var sentOne = `${a} and ${b} and ${c} sum to ${sumTwo}.`;
+  var sentTwo = `The product of ${a} and ${b} and ${c} is ${productTwo}.`;
+  
+  var returnArray = [sumTwo, productTwo, sentOne, sentTwo];
+  return returnArray;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
